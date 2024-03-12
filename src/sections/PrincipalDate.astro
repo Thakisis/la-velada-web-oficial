@@ -21,7 +21,7 @@ import Typography from "@/components/Typography.astro"
 		as="h2"
 		variant="h2"
 		color="neutral"
-		class:list={"underline-transition mt-6 flex max-w-sm flex-col transition-all duration-300 ease-in-out hover:text-accent"}
+		class:list={"underline-transition mt-6 flex max-w-sm flex-col transition-all duration-300 ease-in-out hover:text-accent motion-reduce:transition-none"}
 	>
 		<a
 			class="flex"
@@ -39,7 +39,7 @@ import Typography from "@/components/Typography.astro"
 	>
 		<div class="flex flex-col items-center justify-center gap-y-2">
 			<Action
-				class="!w-full !text-base xs:!text-xl"
+				class="w-full text-base"
 				as="a"
 				aria-disabled="true"
 				href="#"
@@ -55,7 +55,7 @@ import Typography from "@/components/Typography.astro"
 		</div>
 		<div>
 			<Action
-				class="!w-full !text-base xs:!text-xl"
+				class="w-full text-base"
 				as="a"
 				href="https://lavelada.store/"
 				target="_blank"
@@ -183,6 +183,12 @@ import Typography from "@/components/Typography.astro"
 		background-position: 100% 100%;
 		background-repeat: no-repeat;
 		transition: background-size 0.3s ease-in-out;
+	}
+
+	@media (prefers-reduced-motion) {
+		.underline-transition {
+			transition: none;
+		}
 	}
 	.underline-transition:hover {
 		background-size: 100% 3px;
